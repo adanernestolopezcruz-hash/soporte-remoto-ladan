@@ -318,13 +318,45 @@ footer.site-footer{
 }
 
 /* =========================================================
-   COMPATIBILIDAD TEMPORAL
-   Mantiene el aspecto de las páginas antiguas (guia.html,
-   descargas.html, precios.html) mientras las migramos en los
-   próximos pasos. Eliminar al final de la migración.
+   PASO 5 — Formatos publicitarios Adsterra
    ========================================================= */
 
-/* Header antiguo sin clase .site-header */
+#social-bar-slot {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 90;
+  max-width: 320px;
+  pointer-events: none;
+}
+#social-bar-slot > * { pointer-events: auto; }
+
+@media (max-width: 768px) {
+  #social-bar-slot {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.content-page .ad-slot { margin-block: 2rem; }
+
+.download-card .btn + .ad-slot,
+.download-card .ad-slot + .btn { margin-top: 1.25rem; }
+
+.ad-slot--native::before {
+  content: "Contenido patrocinado";
+  letter-spacing: .12em;
+  color: #7c8ba8;
+}
+
+/* =========================================================
+   COMPATIBILIDAD TEMPORAL
+   ========================================================= */
+
 header:not(.site-header){
   display:flex;justify-content:space-between;align-items:center;gap:1rem;
   padding:.85rem 1.25rem;
@@ -338,7 +370,6 @@ header:not(.site-header) .logo{
   text-decoration:none;display:flex;align-items:center;gap:.5rem;
 }
 
-/* Contenido de páginas antiguas */
 .content-page,.features{
   padding:2.5rem 1.25rem;max-width:var(--maxw);
   margin-inline:auto;flex:1;width:100%;
@@ -365,7 +396,6 @@ header:not(.site-header) .logo{
   padding:.12em .4em;border-radius:5px;
 }
 
-/* Botón antiguo .btn-principal */
 .btn-principal{
   display:inline-block;
   background:linear-gradient(135deg,var(--accent-strong),#0369a1);
