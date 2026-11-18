@@ -14,6 +14,9 @@ body {
     line-height: 1.6;
 }
 
+/* ==========================================
+   NAVEGACIÓN / HEADER
+   ========================================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -21,19 +24,27 @@ header {
     padding: 1.2rem 2rem;
     background-color: #1e293b;
     border-bottom: 1px solid #334155;
+    width: 100%;
 }
 
 .logo {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #38bdf8;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
 }
 
 nav a {
     color: #cbd5e1;
     text-decoration: none;
-    margin-left: 1.5rem;
     font-size: 0.95rem;
+    white-space: nowrap;
     transition: color 0.2s;
 }
 
@@ -41,22 +52,25 @@ nav a:hover, nav a.activo {
     color: #38bdf8;
 }
 
+/* ==========================================
+   ESTRUCTURA GENERAL Y CONTENIDO
+   ========================================== */
 .hero {
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 4rem 1.5rem;
     max-width: 800px;
     margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
 .hero p {
     color: #94a3b8;
     margin-bottom: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 .btn-principal {
@@ -67,6 +81,7 @@ nav a:hover, nav a.activo {
     border-radius: 0.375rem;
     text-decoration: none;
     font-weight: 600;
+    text-align: center;
     transition: background-color 0.2s;
 }
 
@@ -75,7 +90,7 @@ nav a:hover, nav a.activo {
 }
 
 .features, .content-page {
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
     max-width: 1100px;
     margin: 0 auto;
     flex: 1;
@@ -85,25 +100,25 @@ nav a:hover, nav a.activo {
 .features h2, .content-page h2 {
     text-align: center;
     margin-bottom: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .subtitle {
     text-align: center;
     color: #94a3b8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .grid, .download-grid, .pricing-grid, .steps-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .card, .step-card {
     background-color: #1e293b;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 0.5rem;
     border: 1px solid #334155;
     display: flex;
@@ -114,32 +129,25 @@ nav a:hover, nav a.activo {
 .card h3, .step-card h3 {
     margin-bottom: 0.75rem;
     color: #f8fafc;
+    font-size: 1.15rem;
 }
 
 .card p, .step-card p {
     color: #94a3b8;
     font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .price {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #38bdf8;
     margin-bottom: 0.5rem;
 }
 
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #020617;
-    color: #64748b;
-    font-size: 0.875rem;
-    border-top: 1px solid #1e293b;
-}
-
-
-
+/* ==========================================
+   CONTENEDOR DE ANUNCIOS (ADSTERRA)
+   ========================================== */
 .ad-container {
     width: 100%;
     max-width: 900px;
@@ -149,6 +157,7 @@ footer {
     border: 1px dashed #334155;
     border-radius: 0.5rem;
     text-align: center;
+    overflow: hidden;
 }
 
 .ad-label {
@@ -159,63 +168,66 @@ footer {
     letter-spacing: 1px;
 }
 
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #020617;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #1e293b;
+    margin-top: auto;
+}
 
 /* ==========================================
-   ADAPTACIÓN PARA TELÉFONOS (RESPONSIVO)
+   ADAPTACIÓN RESPONSIVA (CELULARES)
    ========================================== */
-
 @media (max-width: 768px) {
-    /* Menú de navegación en vertical */
     header {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
-        padding: 1rem;
-        text-align: center;
+        padding: 1rem 0.75rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
     }
 
     nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
     }
 
     nav a {
-        margin-left: 0;
-        padding: 0.4rem 0.8rem;
         background-color: #0f172a;
-        border-radius: 0.25rem;
+        padding: 0.6rem 0.4rem;
+        border-radius: 0.375rem;
+        border: 1px solid #334155;
+        text-align: center;
         font-size: 0.85rem;
-    }
-
-    /* Reducción de títulos y paddings principales */
-    .hero {
-        padding: 2.5rem 1rem;
+        width: 100%;
     }
 
     .hero h1 {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
     }
 
-    .hero p {
-        font-size: 0.95rem;
+    .hero {
+        padding: 2rem 1rem;
     }
 
     .features, .content-page {
         padding: 1.5rem 1rem;
     }
 
-    /* Ajuste de cuadrículas a 1 sola columna */
     .grid, .download-grid, .pricing-grid, .steps-container {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
 
-    /* Ajuste del contenedor de anuncios de Adsterra */
     .ad-container {
-        margin: 1rem auto;
+        margin: 1rem 0;
         padding: 0.5rem;
-        max-width: 100%;
-        overflow-x: hidden;
     }
 }
