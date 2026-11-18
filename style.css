@@ -21,17 +21,40 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 2rem;
+    padding: 1rem 1.5rem;
     background-color: #1e293b;
     border-bottom: 1px solid #334155;
+    position: relative;
     width: 100%;
 }
 
 .logo {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: bold;
     color: #38bdf8;
     white-space: nowrap;
+}
+
+/* Botón Hamburguesa (oculto en PC) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: #f8fafc;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 nav {
@@ -179,35 +202,36 @@ footer {
 }
 
 /* ==========================================
-   ADAPTACIÓN RESPONSIVA (CELULARES)
+   RESPONSIVO (TELÉFONOS) CON MENÚ HAMBURGUESA
    ========================================== */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 0.75rem;
-    }
-
-    .logo {
-        font-size: 1.3rem;
+    .menu-toggle {
+        display: flex;
     }
 
     nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
+        background-color: #1e293b;
+        border-bottom: 1px solid #334155;
+        padding: 1rem 0;
+        gap: 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.activo {
+        display: flex;
     }
 
     nav a {
-        background-color: #0f172a;
-        padding: 0.6rem 0.4rem;
-        border-radius: 0.375rem;
-        border: 1px solid #334155;
-        text-align: center;
-        font-size: 0.85rem;
+        padding: 0.8rem 1.5rem;
         width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #0f172a;
     }
 
     .hero h1 {
