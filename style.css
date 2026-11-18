@@ -158,3 +158,64 @@ footer {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+
+/* ==========================================
+   ADAPTACIÓN PARA TELÉFONOS (RESPONSIVO)
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* Menú de navegación en vertical */
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        margin-left: 0;
+        padding: 0.4rem 0.8rem;
+        background-color: #0f172a;
+        border-radius: 0.25rem;
+        font-size: 0.85rem;
+    }
+
+    /* Reducción de títulos y paddings principales */
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .features, .content-page {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Ajuste de cuadrículas a 1 sola columna */
+    .grid, .download-grid, .pricing-grid, .steps-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Ajuste del contenedor de anuncios de Adsterra */
+    .ad-container {
+        margin: 1rem auto;
+        padding: 0.5rem;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
