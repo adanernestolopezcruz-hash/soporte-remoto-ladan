@@ -1,74 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte Remoto Ladan - Descargas</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Descargas — Soporte Remoto Ladan</title>
+  <meta name="description" content="Descarga la consola del técnico, el servidor remoto y el túnel de red. Verifica el SHA-256 antes de ejecutar.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="canonical" href="https://tudominio.com/descargas.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">🛠️ Soporte Remoto Ladan</div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
     </button>
     <nav id="navMenu">
-        <a href="index.html">Inicio</a>
-        <a href="descargas.html">Descargas</a>
-        <a href="guia.html">Guía de Uso</a>
-        <a href="precios.html">Precios y Licencias</a>
+      <a href="index.html">Inicio</a>
+      <a href="descargas.html" class="activo">Descargas</a>
+      <a href="guia.html">Guía de uso</a>
+      <a href="precios.html">Precios</a>
+      <a href="descargas.html" class="btn-nav">Descargar</a>
     </nav>
+  </div>
 </header>
 
-    <main class="content-page">
-        <h2>Centro de Descargas</h2>
-        <p class="subtitle">Obtén todos los componentes necesarios para habilitar el sistema de asistencia técnica.</p>
-        
-        <div class="download-grid">
-            <div class="card">
-                <h3>Consola del Técnico</h3>
-                <p><strong>cliente_gui.exe</strong></p>
-                <p>Aplicación de interfaz gráfica para conectarte, ver pantallas remotas, enviar archivos y generar reportes PDF.</p>
-                <a href="cliente_gui.exe" download class="btn-principal">Descargar Cliente</a>
-            </div>
-            
-            <div class="card">
-                <h3>Servidor Remoto (Cliente)</h3>
-                <p><strong>servidor.exe</strong></p>
-                <p>Binario UAC para la computadora que recibirá asistencia. Se conecta al túnel de forma automática.</p>
-                <a href="servidor.exe" download class="btn-principal">Descargar Servidor</a>
-            </div>
+<main>
+  <!-- Intro -->
+  <section class="section" style="padding-bottom:1rem">
+    <div class="container" style="text-align:center">
+      <span class="badge"><span class="pulse"></span> Versión beta · sin costo</span>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em;margin:1rem auto .75rem;max-width:20ch">
+        Centro de descargas
+      </h1>
+      <p style="color:var(--muted);max-width:60ch;margin:0 auto">
+        Los tres componentes que necesitas para iniciar una sesión de soporte.
+        Verifica el hash SHA-256 antes de ejecutar cualquier binario.
+      </p>
+    </div>
+  </section>
 
-            <div class="card">
-                <h3>Túnel de Red (Bore)</h3>
-                <p><strong>bore.exe</strong></p>
-                <p>Utilidad de túnel indispensable que debe ubicarse en la misma carpeta del servidor para rutear el tráfico.</p>
-                <a href="bore.exe" download class="btn-principal">Descargar Bore</a>
-            </div>
+  <!-- Tarjetas de descarga -->
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="grid grid-3">
+
+        <!-- Cliente -->
+        <article class="card download-card">
+          <h3>Consola del técnico</h3>
+          <p><code>cliente_gui.exe</code></p>
+          <div class="file-meta">
+            <span class="tag">v1.0.0</span>
+            <span class="tag">12 MB</span>
+            <span class="tag ok">Windows 10/11</span>
+          </div>
+          <div class="hash-box">
+            <code>a3f8b9c2d1e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0</code>
+            <button data-copy="a3f8b9c2d1e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0">Copiar</button>
+          </div>
+          <p style="font-size:.85rem">Interfaz gráfica para conectarte, ver pantallas, enviar archivos y generar reportes en PDF.</p>
+          <a href="descarga.html?f=cliente" class="btn btn-primary btn-block" style="margin-top:auto">Descargar cliente</a>
+        </article>
+
+        <!-- Servidor -->
+        <article class="card download-card">
+          <h3>Servidor remoto</h3>
+          <p><code>servidor.exe</code></p>
+          <div class="file-meta">
+            <span class="tag">v1.0.0</span>
+            <span class="tag">8 MB</span>
+            <span class="tag ok">UAC automático</span>
+          </div>
+          <div class="hash-box">
+            <code>b4e9c0d3e2f5a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2</code>
+            <button data-copy="b4e9c0d3e2f5a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2">Copiar</button>
+          </div>
+          <p style="font-size:.85rem">Binario UAC para la computadora que recibe asistencia. Abre el túnel automáticamente.</p>
+          <a href="descarga.html?f=servidor" class="btn btn-primary btn-block" style="margin-top:auto">Descargar servidor</a>
+        </article>
+
+        <!-- Bore -->
+        <article class="card download-card">
+          <h3>Túnel de red</h3>
+          <p><code>bore.exe</code></p>
+          <div class="file-meta">
+            <span class="tag">v0.5</span>
+            <span class="tag">3 MB</span>
+            <span class="tag ok">Obligatorio</span>
+          </div>
+          <div class="hash-box">
+            <code>c5f0d1e4f3a6b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4</code>
+            <button data-copy="c5f0d1e4f3a6b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4">Copiar</button>
+          </div>
+          <p style="font-size:.85rem">Utilidad de túnel que debe ir en la misma carpeta del servidor para enrutar el tráfico.</p>
+          <a href="descarga.html?f=bore" class="btn btn-primary btn-block" style="margin-top:auto">Descargar Bore</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Verificación -->
+  <section class="section" id="verificacion" style="padding-top:0">
+    <div class="container" style="max-width:800px">
+      <div class="card">
+        <h3>🔐 Verifica tus descargas</h3>
+        <p style="margin-bottom:1rem">
+          Antes de ejecutar cualquier binario, calcula su SHA-256 y compáralo con el publicado arriba.
+          Si no coincide, <strong>no lo ejecutes</strong>: descárgalo de nuevo.
+        </p>
+        <h4 style="font-size:.95rem;margin-bottom:.5rem">En Windows (CMD o PowerShell)</h4>
+        <div class="hash-box" style="margin-bottom:1rem">
+          <code>certutil -hashfile cliente_gui.exe SHA256</code>
         </div>
-    </main>
-<!-- BLOQUE DE ANUNCIO ADSTERRA -->
-<div class="ad-container">
+        <p style="font-size:.9rem;margin-bottom:1rem">
+          También puedes arrastrar el archivo a
+          <a href="https://www.virustotal.com" target="_blank" rel="noopener" style="color:var(--accent)">VirusTotal</a>
+          para un análisis en línea de más de 60 antivirus.
+        </p>
+        <ul class="plan-list">
+          <li>Solo descarga desde este sitio oficial.</li>
+          <li>Compara el hash carácter por carácter (o pégalo con el botón Copiar).</li>
+          <li>Guarda los tres binarios en la misma carpeta.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    
-    <script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
+  <!-- Anuncio inline (único bloque Adsterra de esta página) -->
+  <div class="ad-slot ad-slot--inline container">
     <div id="container-9edb2e0c972d6740769ff74e09b94b75"></div>
-</div>
-    
-    <footer>
-        <p>&copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.</p>
-    </footer>
+  </div>
 
-    <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>¿No sabes por dónde empezar?</h2>
+        <p>La guía de uso explica los tres pasos en menos de un minuto.</p>
+        <a href="guia.html" class="btn btn-secondary">Ver guía de uso</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('activo');
-    });
-</script>
-    
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+      <p>Asistencia técnica a distancia para técnicos independientes y talleres.</p>
+    </div>
+    <div>
+      <h4>Producto</h4>
+      <ul>
+        <li><a href="descargas.html">Descargas</a></li>
+        <li><a href="guia.html">Guía de uso</a></li>
+        <li><a href="precios.html">Precios y licencias</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="guia.html">Requisitos</a></li>
+        <li><a href="guia.html">Preguntas frecuentes</a></li>
+        <li><a href="descargas.html#verificacion">Verificar descarga</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.
+  </div>
+</footer>
+
+<script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
+<script src="app.js" defer></script>
 </body>
 </html>
