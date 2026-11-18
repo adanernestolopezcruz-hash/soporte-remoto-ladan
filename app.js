@@ -25,9 +25,21 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
   });
 });
 
-// --- Banner de cookies automático ---
+// --- Banner de cookies + carga condicional de Adsterra ---
 (function () {
-  // Crear el banner si no existe en el HTML (así aparece en todas las páginas)
+  const ADS_SRC = 'https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75';
+  const ADS_CONTAINER_ID = 'container-9edb2e0c972d6740769ff74e09b94b75';
+
+  function cargarAdsterra() {
+    if (document.querySelector('script[data-adsterra]')) return;
+    const s = document.createElement('script');
+    s.src = ADS_SRC;
+    s.async = true;
+    s.setAttribute('data-cfasync', 'false');
+    s.setAttribute('data-adsterra', '1');
+    document.body.appendChild(s);
+  }
+
   let banner = document.getElementById('cookieBanner');
   if (!banner) {
     banner = document.createElement('div');
@@ -46,9 +58,14 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
     document.body.appendChild(banner);
   }
 
-  // Si ya eligió antes, no mostrarlo
   const eleccion = localStorage.getItem('cookiesAceptadas');
-  if (eleccion === '1' || eleccion === '0') {
+
+  if (eleccion === '1') {
+    banner.hidden = true;
+    cargarAdsterra();
+    return;
+  }
+  if (eleccion === '0') {
     banner.hidden = true;
     return;
   }
@@ -58,6 +75,7 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
   banner.querySelector('[data-aceptar]')?.addEventListener('click', () => {
     localStorage.setItem('cookiesAceptadas', '1');
     banner.hidden = true;
+    cargarAdsterra();
   });
 
   banner.querySelector('[data-rechazar]')?.addEventListener('click', () => {
