@@ -72,8 +72,7 @@
     Tu descarga comenzará en unos segundos.
   </p>
 
-  <!-- Anuncio principal (único en esta página) -->
-  <div class="ad-slot" style="margin:0 0 1.5rem">
+  <div class="ad-slot" style="margin:2rem 0">
     <div id="container-9edb2e0c972d6740769ff74e09b94b75"></div>
   </div>
 
@@ -102,12 +101,9 @@
   </div>
 </footer>
 
-<!-- Enlace oculto que dispara la descarga real -->
 <a id="enlaceAuto" href="#" download hidden></a>
 
-<script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
 <script>
-  // --- Mapa de archivos: cambia hashes reales aquí cuando los tengas ---
   const archivos = {
     cliente: {
       nombre: 'cliente_gui.exe',
@@ -127,7 +123,6 @@
   const key = (params.get('f') || 'cliente').toLowerCase();
   const info = archivos[key] || archivos.cliente;
 
-  // Rellenar datos en la página
   document.getElementById('nombreArchivo').textContent = info.nombre;
   document.getElementById('hashArchivo').textContent = info.hash;
 
@@ -142,16 +137,13 @@
     } catch {}
   });
 
-  // Configurar enlace de descarga real
   const link = document.getElementById('enlaceAuto');
   link.href = info.nombre;
 
-  // Enlace manual (si el usuario no quiere esperar)
   const manual = document.getElementById('descargaManual');
   manual.href = info.nombre;
   manual.setAttribute('download', '');
 
-  // Cuenta atrás de 5 segundos con anillo
   const SEGUNDOS = 5;
   let restante = SEGUNDOS;
   const contadorEl = document.getElementById('contador');
@@ -165,16 +157,15 @@
     if (restante <= 0) {
       clearInterval(id);
       infoEl.textContent = '¡Descarga iniciada! Revisa la carpeta de descargas.';
-      link.click(); // arranca la descarga real
+      link.click();
       return;
     }
     restante--;
   };
 
   const id = setInterval(tick, 1000);
-  tick(); // primer pintado inmediato
+  tick();
 
-  // Si el usuario ya pulsó "descarga manual", no hace falta esperar
   manual.addEventListener('click', () => {
     clearInterval(id);
     infoEl.textContent = 'Descarga iniciada manualmente.';
