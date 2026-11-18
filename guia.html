@@ -1,61 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte Remoto Ladan - Guía de Uso</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de uso — Soporte Remoto Ladan</title>
+  <meta name="description" content="Aprende a iniciar una sesión de soporte remoto en tres pasos: ejecutar el servidor, compartir el enlace y conectar desde la consola del técnico.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="canonical" href="https://tudominio.com/guia.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <header>
-    <div class="logo">🛠️ Soporte Remoto Ladan</div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
     </button>
     <nav id="navMenu">
-        <a href="index.html">Inicio</a>
-        <a href="descargas.html">Descargas</a>
-        <a href="guia.html">Guía de Uso</a>
-        <a href="precios.html">Precios y Licencias</a>
+      <a href="index.html">Inicio</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="guia.html" class="activo">Guía de uso</a>
+      <a href="precios.html">Precios</a>
+      <a href="descargas.html" class="btn-nav">Descargar</a>
     </nav>
+  </div>
 </header>
 
-    <main class="content-page">
-        <h2>Manual de Uso Rápido</h2>
-        <p class="subtitle">Sigue estos sencillos pasos para iniciar una sesión de soporte técnico exitosa.</p>
+<main>
+  <!-- Intro -->
+  <section class="section" style="padding-bottom:1rem">
+    <div class="container" style="text-align:center">
+      <span class="badge"><span class="pulse"></span> Guía rápida · 2 minutos</span>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em;margin:1rem auto .75rem;max-width:20ch">
+        Cómo iniciar una sesión de soporte
+      </h1>
+      <p style="color:var(--muted);max-width:60ch;margin:0 auto">
+        Tres pasos para conectar la consola del técnico con el equipo remoto,
+        sin abrir puertos y sin configurar el router.
+      </p>
+    </div>
+  </section>
 
-        <div class="steps-container">
-            <div class="step-card">
-                <h3>Paso 1: Ejecutar el Servidor</h3>
-                <p>En la PC del cliente, coloca el archivo <code>servidor.exe</code> junto al binario <code>bore.exe</code> y ejecútalo. Se elevará automáticamente a permisos de administrador y abrirá el túnel público generando una dirección y una contraseña temporal de sesión.</p>
-            </div>
+  <!-- Pasos -->
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="steps">
 
-            <div class="step-card">
-                <h3>Paso 2: Conexión desde el Técnico</h3>
-                <p>Abre tu <code>cliente_gui.exe</code> en tu computadora, ingresa la dirección IP o el enlace del túnel proporcionado por el cliente junto con la contraseña de sesión y haz clic en <strong>Conectar</strong>.</p>
-            </div>
-
-            <div class="step-card">
-                <h3>Paso 3: Diagnóstico y Mantenimiento</h3>
-                <p>Una vez enlazados, podrás controlar el mouse y teclado, transferir archivos, optimizar los discos duros del equipo remoto mediante herramientas nativas o extraer contraseñas WiFi de forma totalmente segura.</p>
-            </div>
+        <div class="step">
+          <h3>Ejecuta el servidor en el equipo remoto</h3>
+          <p>
+            Copia <code>servidor.exe</code> y <code>bore.exe</code> en la misma carpeta
+            de la PC que vas a asistir. Haz doble clic en <code>servidor.exe</code>.
+            El programa solicitará permisos de administrador (UAC) y abrirá
+            el túnel automáticamente.
+          </p>
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.</p>
-    </footer>
+        <div class="step">
+          <h3>Comparte el enlace y la contraseña</h3>
+          <p>
+            Al iniciar, el servidor mostrará en pantalla una <strong>dirección pública</strong>
+            (IP o URL del túnel) y una <strong>contraseña temporal</strong>. El usuario remoto
+            debe pasártelas por el canal que prefieras (WhatsApp, email, teléfono).
+          </p>
+        </div>
 
-    <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+        <div class="step">
+          <h3>Conecta desde la consola del técnico</h3>
+          <p>
+            Abre <code>cliente_gui.exe</code> en tu equipo, pega la dirección y la contraseña
+            en los campos correspondientes y pulsa <strong>Conectar</strong>.
+            Verás la pantalla remota en segundos.
+          </p>
+        </div>
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('activo');
-    });
-</script>
-    
+      </div>
+    </div>
+  </section>
+
+  <!-- Requisitos -->
+  <section class="section" id="requisitos" style="padding-top:0">
+    <div class="container" style="max-width:860px">
+      <div class="card">
+        <h3>Requisitos del sistema</h3>
+        <ul class="plan-list" style="margin-top:.75rem">
+          <li>Windows 10 u 11 (64 bits recomendado).</li>
+          <li>Conexión a internet estable en ambos equipos.</li>
+          <li>Permisos de administrador en el equipo remoto (necesarios para UAC).</li>
+          <li>Los tres binarios (<code>cliente_gui.exe</code>, <code>servidor.exe</code>, <code>bore.exe</code>) en la misma carpeta.</li>
+          <li>Firewall de Windows permitiendo la salida del proceso <code>bore.exe</code>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué puedes hacer en sesión -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <h2>Qué puedes hacer en una sesión</h2>
+        <p>Herramientas disponibles una vez conectado.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="icon">🖱️</div>
+          <h3>Control total del equipo</h3>
+          <p>Mueve el ratón, escribe en el teclado y navega por el escritorio remoto como si estuvieras allí.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📁</div>
+          <h3>Transferencia de archivos</h3>
+          <p>Envía controladores, parches o utilidades al equipo remoto, y recibe logs o diagnósticos.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧹</div>
+          <h3>Mantenimiento de discos</h3>
+          <p>Desfragmenta, libera espacio y ejecuta utilidades nativas de Windows desde la consola.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🔎</div>
+          <h3>Diagnóstico rápido</h3>
+          <p>Revisa procesos, servicios y eventos del sistema sin que el usuario tenga que hacer nada.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📶</div>
+          <h3>Gestión de credenciales WiFi</h3>
+          <p>Consulta las redes guardadas en el equipo remoto <strong>con la autorización expresa del usuario</strong>, para reconectar o migrar perfiles.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📄</div>
+          <h3>Reportes en PDF</h3>
+          <p>Genera un informe con diagnóstico, acciones realizadas y hora de cierre al finalizar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anuncio inline (único bloque de esta página) -->
+  <div class="ad-slot ad-slot--inline container">
+    <div id="container-9edb2e0c972d6740769ff74e09b94b75"></div>
+  </div>
+
+  <!-- Solución de problemas -->
+  <section class="section" style="padding-top:0">
+    <div class="container" style="max-width:800px">
+      <div class="section-head">
+        <h2>Problemas comunes</h2>
+        <p>Soluciones rápidas a los errores más frecuentes.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Windows SmartScreen bloquea el .exe</summary>
+          <p>Es normal en la primera ejecución. Pulsa <em>Más información</em> → <em>Ejecutar de todas formas</em>. La versión estable incluirá firma de código.</p>
+        </details>
+        <details>
+          <summary>El servidor no abre el túnel</summary>
+          <p>Verifica que <code>bore.exe</code> esté en la misma carpeta que <code>servidor.exe</code>. Si tu red bloquea la salida, prueba con otra red (por ejemplo, datos móviles).</p>
+        </details>
+        <details>
+          <summary>La conexión se cae cada pocos minutos</summary>
+          <p>Asegúrate de que el firewall no esté cerrando el proceso por inactividad. También revisa que el equipo remoto no entre en suspensión (Configuración → Sistema → Energía).</p>
+        </details>
+        <details>
+          <summary>«Contraseña incorrecta» al conectar</summary>
+          <p>La contraseña caduca al cerrar el servidor. Pide al usuario que lo reinicie y comparte de nuevo la contraseña generada.</p>
+        </details>
+        <details>
+          <summary>No veo la pantalla remota</summary>
+          <p>Comprueba que ambos binarios sean de la misma versión (consulta las etiquetas en <a href="descargas.html" style="color:var(--accent)">Descargas</a>). Si acabas de actualizar, reemplaza los tres archivos.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="cta-band">
+        <h2>¿Todo listo para probar?</h2>
+        <p>Descarga los tres binarios y haz tu primera conexión hoy.</p>
+        <a href="descargas.html" class="btn btn-primary">Ir a descargas</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+      <p>Asistencia técnica a distancia para técnicos independientes y talleres.</p>
+    </div>
+    <div>
+      <h4>Producto</h4>
+      <ul>
+        <li><a href="descargas.html">Descargas</a></li>
+        <li><a href="guia.html">Guía de uso</a></li>
+        <li><a href="precios.html">Precios y licencias</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="guia.html#requisitos">Requisitos</a></li>
+        <li><a href="guia.html">Preguntas frecuentes</a></li>
+        <li><a href="descargas.html#verificacion">Verificar descarga</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.
+  </div>
+</footer>
+
+<script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
+<script src="app.js" defer></script>
 </body>
 </html>
