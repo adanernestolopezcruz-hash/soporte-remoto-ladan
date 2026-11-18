@@ -29,7 +29,6 @@
 </header>
 
 <main>
-  <!-- Intro -->
   <section class="section" style="padding-bottom:1rem">
     <div class="container" style="text-align:center">
       <span class="badge"><span class="pulse"></span> Versión beta · sin costo</span>
@@ -43,12 +42,10 @@
     </div>
   </section>
 
-  <!-- Tarjetas de descarga -->
   <section class="section" style="padding-top:1rem">
     <div class="container">
       <div class="grid grid-3">
 
-        <!-- Cliente -->
         <article class="card download-card">
           <h3>Consola del técnico</h3>
           <p><code>cliente_gui.exe</code></p>
@@ -65,7 +62,6 @@
           <a href="descarga.html?f=cliente" class="btn btn-primary btn-block" style="margin-top:auto">Descargar cliente</a>
         </article>
 
-        <!-- Servidor -->
         <article class="card download-card">
           <h3>Servidor remoto</h3>
           <p><code>servidor.exe</code></p>
@@ -82,7 +78,6 @@
           <a href="descarga.html?f=servidor" class="btn btn-primary btn-block" style="margin-top:auto">Descargar servidor</a>
         </article>
 
-        <!-- Bore -->
         <article class="card download-card">
           <h3>Túnel de red</h3>
           <p><code>bore.exe</code></p>
@@ -103,7 +98,6 @@
     </div>
   </section>
 
-  <!-- Verificación -->
   <section class="section" id="verificacion" style="padding-top:0">
     <div class="container" style="max-width:800px">
       <div class="card">
@@ -130,12 +124,10 @@
     </div>
   </section>
 
-  <!-- Anuncio inline (único bloque Adsterra de esta página) -->
-  <div class="ad-slot ad-slot--inline container">
+  <div class="ad-slot ad-slot--native ad-slot--inline container">
     <div id="container-9edb2e0c972d6740769ff74e09b94b75"></div>
   </div>
 
-  <!-- CTA -->
   <section class="section">
     <div class="container">
       <div class="cta-band">
@@ -145,6 +137,8 @@
       </div>
     </div>
   </section>
+
+  <div id="social-bar-slot" aria-hidden="true"></div>
 </main>
 
 <footer class="site-footer">
@@ -164,12 +158,12 @@
     <div>
       <h4>Recursos</h4>
       <ul>
-        <li><a href="guia.html">Requisitos</a></li>
+        <li><a href="guia.html#requisitos">Requisitos</a></li>
         <li><a href="guia.html">Preguntas frecuentes</a></li>
         <li><a href="descargas.html#verificacion">Verificar descarga</a></li>
       </ul>
     </div>
-       <div>
+    <div>
       <h4>Legal</h4>
       <ul>
         <li><a href="legal.html">Aviso legal</a></li>
@@ -183,7 +177,15 @@
   </div>
 </footer>
 
-<script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
+<script>
+  document.querySelectorAll('a[href*="descarga.html"]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (localStorage.getItem('cookiesAceptadas') === '1') {
+        // Adsterra Popunder se dispara desde el panel con trigger "on click".
+      }
+    });
+  });
+</script>
 <script src="app.js" defer></script>
 </body>
 </html>
