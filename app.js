@@ -25,17 +25,43 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
   });
 });
 
-// --- Banner de cookies (se activa en el Paso 4) ---
+// --- Banner de cookies automático ---
 (function () {
-  const banner = document.getElementById('cookieBanner');
-  if (!banner) return;
-  if (localStorage.getItem('cookiesAceptadas') === '1') {
+  // Crear el banner si no existe en el HTML (así aparece en todas las páginas)
+  let banner = document.getElementById('cookieBanner');
+  if (!banner) {
+    banner = document.createElement('div');
+    banner.id = 'cookieBanner';
+    banner.className = 'cookie-banner';
+    banner.hidden = true;
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Aviso de cookies');
+    banner.innerHTML = `
+      <span>Usamos cookies propias y de terceros (publicidad) para mejorar la experiencia. <a href="cookies.html">Más información</a>.</span>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn btn-secondary" data-rechazar>Rechazar</button>
+        <button class="btn btn-primary" data-aceptar>Aceptar</button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+  }
+
+  // Si ya eligió antes, no mostrarlo
+  const eleccion = localStorage.getItem('cookiesAceptadas');
+  if (eleccion === '1' || eleccion === '0') {
     banner.hidden = true;
     return;
   }
+
   banner.hidden = false;
+
   banner.querySelector('[data-aceptar]')?.addEventListener('click', () => {
     localStorage.setItem('cookiesAceptadas', '1');
+    banner.hidden = true;
+  });
+
+  banner.querySelector('[data-rechazar]')?.addEventListener('click', () => {
+    localStorage.setItem('cookiesAceptadas', '0');
     banner.hidden = true;
   });
 })();
