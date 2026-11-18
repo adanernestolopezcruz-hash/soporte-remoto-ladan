@@ -1,74 +1,218 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte Remoto Ladan - Inicio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soporte Remoto Ladan — Asistencia técnica a distancia segura</title>
+  <meta name="description" content="Software de soporte remoto cifrado de extremo a extremo. Controla equipos, transfiere archivos y diagnostica PC a distancia sin abrir puertos ni configurar VPN.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="canonical" href="https://tudominio.com/index.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Soporte Remoto Ladan — Asistencia técnica a distancia">
+  <meta property="og:description" content="Control remoto cifrado, transferencia de archivos y diagnóstico de PC. Gratis durante la fase beta.">
+  <meta property="og:image" content="https://tudominio.com/og-image.png">
+  <meta property="og:url" content="https://tudominio.com/">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <header>
-    <div class="logo">🛠️ Soporte Remoto Ladan</div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
     </button>
     <nav id="navMenu">
-        <a href="index.html">Inicio</a>
-        <a href="descargas.html">Descargas</a>
-        <a href="guia.html">Guía de Uso</a>
-        <a href="precios.html">Precios y Licencias</a>
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="guia.html">Guía de uso</a>
+      <a href="precios.html">Precios</a>
+      <a href="descargas.html" class="btn-nav">Descargar</a>
     </nav>
+  </div>
 </header>
 
-    <main>
-        <section class="hero">
-            <h1>Asistencia y Mantenimiento Técnico a Distancia</h1>
-            <p>Sistema profesional cifrado de extremo a extremo para el control remoto de equipos PC, optimización de discos y diagnóstico rápido.</p>
-            <a href="descargas.html" class="btn-principal">Ir a Descargas</a>
-        </section>
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge"><span class="pulse"></span> Fase beta · 100% gratis</span>
+      <h1>Soporte técnico remoto <span class="grad">seguro y sin configurar la red</span></h1>
+      <p class="lead">Controla equipos, transfiere archivos y diagnostica problemas a distancia con cifrado de extremo a extremo. Sin abrir puertos, sin VPN, sin complicaciones.</p>
+      <div class="hero-actions">
+        <a href="descargas.html" class="btn btn-primary">Descargar gratis</a>
+        <a href="guia.html" class="btn btn-secondary">Ver cómo funciona</a>
+      </div>
+      <ul class="trust-row">
+        <li>🔒 ChaCha20-Poly1305</li>
+        <li>🌐 Túnel TCP inverso</li>
+        <li>🪟 Windows 10 / 11</li>
+        <li>🆓 Sin registro obligatorio</li>
+      </ul>
+    </div>
+  </section>
 
-        <section class="features">
-            <h2>Características Principales</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>🔒 Seguridad Avanzada</h3>
-                    <p>Cifrado robusto con ChaCha20-Poly1305, autenticación por HMAC e intercambio de claves X25519.</p>
-                </div>
-                <div class="card">
-                    <h3>⚡ Conexión sin Restricciones</h3>
-                    <p>Uso integrado del túnel TCP inverso (Bore) para saltar firewalls y restricciones NAT de forma transparente.</p>
-                </div>
-                <div class="card">
-                    <h3>🖥️ Herramientas de Sistema</h3>
-                    <p>Acceso a desfragmentación de discos (dfrgui), control de energía avanzado y extracción segura de perfiles WiFi.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- CARACTERÍSTICAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Todo lo que un técnico necesita</h2>
+        <p>Herramientas pensadas para el trabajo diario de soporte y mantenimiento.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="icon">🔒</div>
+          <h3>Seguridad de nivel bancario</h3>
+          <p>Cifrado ChaCha20-Poly1305, autenticación HMAC e intercambio de claves X25519 en cada sesión.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⚡</div>
+          <h3>Conexión sin restricciones</h3>
+          <p>Túnel TCP inverso integrado que atraviesa firewalls y NAT sin tocar el router.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🖥️</div>
+          <h3>Herramientas de sistema</h3>
+          <p>Optimización de discos, control de energía y gestión de credenciales con consentimiento del usuario.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📁</div>
+          <h3>Transferencia de archivos</h3>
+          <p>Envía y recibe archivos entre equipos durante la sesión, sin servicios externos de por medio.</p>
+        </article>
+        <article class="card">
+          <div class="icon">📄</div>
+          <h3>Reportes en PDF</h3>
+          <p>Genera un informe de cada intervención con diagnóstico, acciones realizadas y hora de cierre.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🪶</div>
+          <h3>Ligero y portable</h3>
+          <p>Un único ejecutable. No requiere instalación ni dependencias adicionales en el equipo remoto.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<!-- BLOQUE DE ANUNCIO ADSTERRA -->
-<div class="ad-container">
-    <div class="ad-label">Anuncio Patrocinado</div>
-    
-   <script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
-<div id="container-9edb2e0c972d6740769ff74e09b94b75"></div>
-   
-</div>
-    
-    <footer>
-        <p>&copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.</p>
-    </footer>
+  <!-- ANUNCIO 1 -->
+  <div class="ad-slot container">
+    <div id="container-9edb2e0c972d6740769ff74e09b94b75"></div>
+  </div>
 
-    <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+  <!-- CÓMO FUNCIONA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Cómo funciona</h2>
+        <p>Tres pasos y estás dentro del equipo remoto.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Ejecuta el servidor</h3>
+          <p>Coloca <code>servidor.exe</code> junto a <code>bore.exe</code> en la PC del cliente y ejecútalo. Se eleva a administrador y abre el túnel automáticamente.</p>
+        </div>
+        <div class="step">
+          <h3>Comparte el enlace</h3>
+          <p>El servidor genera una dirección pública y una contraseña temporal. El cliente te la pasa por el canal que prefieras.</p>
+        </div>
+        <div class="step">
+          <h3>Conecta y trabaja</h3>
+          <p>Abre <code>cliente_gui.exe</code>, pega la dirección y la contraseña, y pulsa Conectar. Ya tienes control total del equipo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('activo');
-    });
-</script>
-    
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Es realmente gratis?</summary>
+          <p>Sí. Durante la fase beta todas las funciones están disponibles sin costo. Cuando lancemos la versión Pro, la versión gratuita seguirá funcionando con las funciones esenciales.</p>
+        </details>
+        <details>
+          <summary>¿Necesito abrir puertos en el router?</summary>
+          <p>No. El túnel TCP inverso se encarga de todo. Solo necesitas conexión a internet en ambos equipos.</p>
+        </details>
+        <details>
+          <summary>¿Qué cifrado utiliza?</summary>
+          <p>ChaCha20-Poly1305 para el transporte, HMAC para autenticación e intercambio de claves X25519. Cada sesión usa claves efímeras.</p>
+        </details>
+        <details>
+          <summary>¿Funciona en Windows 7?</summary>
+          <p>Recomendamos Windows 10 u 11. En Windows 7 puede funcionar, pero no damos soporte oficial por falta de actualizaciones de seguridad del sistema.</p>
+        </details>
+        <details>
+          <summary>¿El usuario remoto sabe que está siendo asistido?</summary>
+          <p>Sí. El servidor muestra un indicador visible durante toda la sesión y el usuario puede cerrarla en cualquier momento. El acceso siempre requiere su consentimiento.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Empieza a dar soporte en menos de 2 minutos</h2>
+        <p>Descarga los tres binarios y realiza tu primera conexión hoy mismo.</p>
+        <a href="descargas.html" class="btn btn-primary">Ir a descargas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANUNCIO 2 -->
+  <div class="ad-slot container">
+    <div id="ad-slot-footer"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+      <p>Asistencia técnica a distancia para técnicos independientes y talleres.</p>
+    </div>
+    <div>
+      <h4>Producto</h4>
+      <ul>
+        <li><a href="descargas.html">Descargas</a></li>
+        <li><a href="guia.html">Guía de uso</a></li>
+        <li><a href="precios.html">Precios y licencias</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="guia.html">Requisitos</a></li>
+        <li><a href="guia.html">Preguntas frecuentes</a></li>
+        <li><a href="descargas.html">Verificar descarga</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.
+  </div>
+</footer>
+
+<!-- Adsterra: UN solo script por página -->
+<script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
+<script src="app.js" defer></script>
 </body>
 </html>
