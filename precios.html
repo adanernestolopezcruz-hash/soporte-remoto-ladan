@@ -1,57 +1,240 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte Remoto Ladan - Precios y Licencias</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precios y licencias — Soporte Remoto Ladan</title>
+  <meta name="description" content="Plan gratuito durante la fase beta. Licencia Pro con grabación HD, reportes ilimitados y gestión centralizada para talleres.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="canonical" href="https://tudominio.com/precios.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tabla-comp{
+      width:100%;border-collapse:collapse;font-size:.9rem;
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:12px;overflow:hidden;margin-top:1.5rem;
+    }
+    .tabla-comp th,.tabla-comp td{
+      padding:.85rem 1rem;text-align:left;
+      border-bottom:1px solid var(--border);
+    }
+    .tabla-comp thead th{
+      background:var(--surface-2);font-size:.8rem;
+      text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+    }
+    .tabla-comp tbody tr:last-child td{border-bottom:0}
+    .tabla-comp td:not(:first-child){text-align:center}
+    .tabla-comp th:not(:first-child){text-align:center}
+    .tabla-comp .si{color:var(--success);font-weight:700}
+    .tabla-comp .no{color:#64748b}
+    .tabla-comp tbody tr:hover{background:rgba(56,189,248,.04)}
+    @media (max-width:640px){
+      .tabla-comp{font-size:.8rem}
+      .tabla-comp th,.tabla-comp td{padding:.55rem .5rem}
+    }
+  </style>
 </head>
 <body>
- <header>
-    <div class="logo">🛠️ Soporte Remoto Ladan</div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
     </button>
     <nav id="navMenu">
-        <a href="index.html">Inicio</a>
-        <a href="descargas.html">Descargas</a>
-        <a href="guia.html">Guía de Uso</a>
-        <a href="precios.html">Precios y Licencias</a>
+      <a href="index.html">Inicio</a>
+      <a href="descargas.html">Descargas</a>
+      <a href="guia.html">Guía de uso</a>
+      <a href="precios.html" class="activo">Precios</a>
+      <a href="descargas.html" class="btn-nav">Descargar</a>
     </nav>
+  </div>
 </header>
 
-    <main class="content-page">
-        <h2>Planes, Acceso Gratuito y Licenciamiento</h2>
-        <p class="subtitle">Conoce nuestra política de uso libre y los beneficios futuros de las cuentas avanzadas.</p>
+<main>
+  <!-- Intro -->
+  <section class="section" style="padding-bottom:1rem">
+    <div class="container" style="text-align:center">
+      <span class="badge"><span class="pulse"></span> Fase beta · 100% gratis</span>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em;margin:1rem auto .75rem;max-width:20ch">
+        Planes y licencias
+      </h1>
+      <p style="color:var(--muted);max-width:60ch;margin:0 auto">
+        Empieza gratis hoy. Cuando lancemos la versión Pro, tendrás funciones avanzadas
+        para talleres y técnicos con alto volumen de sesiones.
+      </p>
+    </div>
+  </section>
 
-        <div class="pricing-grid">
-            <div class="card">
-                <h3>Fase de Lanzamiento</h3>
-                <p class="price">100% Gratis</p>
-                <p>Durante la actual fase beta y de pruebas iniciales, el uso completo del software de mantenimiento remoto es totalmente gratuito para todos los técnicos.</p>
-            </div>
+  <!-- Pricing cards -->
+  <section class="section" style="padding-top:1rem">
+    <div class="container">
+      <div class="grid grid-2" style="max-width:920px;margin-inline:auto">
 
-            <div class="card">
-                <h3>Funciones Avanzadas (Próximamente)</h3>
-                <p class="price">Modelo Premium</p>
-                <p>Al finalizar la fase gratuita, las funciones avanzadas como la grabación de sesiones de video en alta definición, reportes ilimitados en PDF y gestión centralizada requerirán una cuenta de técnico verificada mediante nuestra API en la nube.</p>
-            </div>
-        </div>
-    </main>
+        <!-- Free -->
+        <article class="card pricing-card">
+          <h3>Beta · Gratis</h3>
+          <p class="price">0 €<small> / siempre</small></p>
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">
+            Para técnicos que empiezan o quieren probar el sistema sin compromiso.
+          </p>
+          <ul class="plan-list">
+            <li>Sesiones remotas ilimitadas</li>
+            <li>Control de teclado y ratón</li>
+            <li>Transferencia de archivos</li>
+            <li>Reportes PDF básicos</li>
+            <li>Túnel seguro incluido</li>
+            <li>Sin registro obligatorio</li>
+          </ul>
+          <a href="descargas.html" class="btn btn-secondary btn-block" style="margin-top:auto">Descargar gratis</a>
+        </article>
 
-    <footer>
-        <p>&copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.</p>
-    </footer>
+        <!-- Pro -->
+        <article class="card pricing-card destacado">
+          <span class="tag ok" style="align-self:flex-start;margin-bottom:.5rem">Más popular</span>
+          <h3>Pro</h3>
+          <p class="price">Próximamente<small> · precio de lanzamiento</small></p>
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">
+            Para técnicos y talleres que necesitan herramientas avanzadas y respaldo documental.
+          </p>
+          <ul class="plan-list">
+            <li>Todo lo del plan gratuito</li>
+            <li>Grabación de sesiones en HD</li>
+            <li>Reportes PDF ilimitados con plantillas</li>
+            <li>Gestión centralizada de clientes</li>
+            <li>Historial de sesiones por cliente</li>
+            <li>Soporte prioritario por email</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-block" style="margin-top:auto" aria-disabled="true">Avísame del lanzamiento</a>
+        </article>
 
-    <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+      </div>
+    </div>
+  </section>
 
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('activo');
-    });
-</script>
+  <!-- Tabla comparativa -->
+  <section class="section" style="padding-top:0">
+    <div class="container" style="max-width:920px">
+      <div class="section-head">
+        <h2>Comparativa de funciones</h2>
+        <p>Todo lo que incluye cada plan, de un vistazo.</p>
+      </div>
+
+      <table class="tabla-comp">
+        <thead>
+          <tr>
+            <th>Función</th>
+            <th>Gratis</th>
+            <th>Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sesiones remotas</td><td>Ilimitadas</td><td>Ilimitadas</td></tr>
+          <tr><td>Control teclado y ratón</td><td class="si">✓</td><td class="si">✓</td></tr>
+          <tr><td>Transferencia de archivos</td><td class="si">✓</td><td class="si">✓</td></tr>
+          <tr><td>Túnel cifrado</td><td class="si">✓</td><td class="si">✓</td></tr>
+          <tr><td>Reportes PDF</td><td>Básico</td><td>Ilimitados</td></tr>
+          <tr><td>Grabación de sesiones</td><td class="no">—</td><td class="si">HD</td></tr>
+          <tr><td>Gestión de clientes</td><td class="no">—</td><td class="si">✓</td></tr>
+          <tr><td>Historial por cliente</td><td class="no">—</td><td class="si">✓</td></tr>
+          <tr><td>Plantillas de reporte</td><td class="no">—</td><td class="si">✓</td></tr>
+          <tr><td>Soporte prioritario</td><td class="no">—</td><td class="si">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Anuncio inline -->
+  <div class="ad-slot ad-slot--inline container">
+    <div id="container-9edb2e0c972d6740769ff74e09b94b75"></div>
+  </div>
+
+  <!-- FAQ licenciamiento -->
+  <section class="section" style="padding-top:0">
+    <div class="container" style="max-width:800px">
+      <div class="section-head">
+        <h2>Preguntas sobre licencias</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿La versión gratuita caduca?</summary>
+          <p>No. Cuando lancemos la versión Pro, la versión gratuita seguirá funcionando con las funciones esenciales. No retiraremos funciones que ya estés usando hoy.</p>
+        </details>
+        <details>
+          <summary>¿Puedo usar la licencia en varios equipos?</summary>
+          <p>Sí. La licencia es por técnico, no por equipo. Puedes instalar el cliente en tu portátil, en el de casa y en el del taller sin costo adicional.</p>
+        </details>
+        <details>
+          <summary>¿Cómo se factura el plan Pro?</summary>
+          <p>Mensual o anual, mediante tarjeta o PayPal. Podrás cancelar en cualquier momento desde el panel de cliente sin penalización.</p>
+        </details>
+        <details>
+          <summary>¿Ofrecen descuentos para talleres?</summary>
+          <p>Sí. Cuando lancemos Pro habrá un plan <em>Taller</em> con hasta 10 técnicos y panel centralizado, con precio por volumen. Los interesados pueden escribirnos por email.</p>
+        </details>
+        <details>
+          <summary>¿Puedo pedir factura con IVA?</summary>
+          <p>Sí. Emitiremos factura fiscal a nombre de la empresa o autónomo que indiques al contratar el plan Pro.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si necesito cancelar?</summary>
+          <p>Puedes cancelar en cualquier momento. La licencia seguirá activa hasta el final del periodo facturado y luego pasará automáticamente al plan gratuito.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Empieza gratis hoy mismo</h2>
+        <p>Sin tarjeta, sin registro. Descarga los tres binarios y haz tu primera conexión.</p>
+        <a href="descargas.html" class="btn btn-primary">Ir a descargas</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><span class="dot"></span> Soporte Remoto Ladan</a>
+      <p>Asistencia técnica a distancia para técnicos independientes y talleres.</p>
+    </div>
+    <div>
+      <h4>Producto</h4>
+      <ul>
+        <li><a href="descargas.html">Descargas</a></li>
+        <li><a href="guia.html">Guía de uso</a></li>
+        <li><a href="precios.html">Precios y licencias</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="guia.html#requisitos">Requisitos</a></li>
+        <li><a href="guia.html">Preguntas frecuentes</a></li>
+        <li><a href="descargas.html#verificacion">Verificar descarga</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Soporte Remoto Ladan. Todos los derechos reservados.
+  </div>
+</footer>
+
+<script async="async" data-cfasync="false" src="https://biomanos.org/21/9edb2e0c972d6740769ff74e09b94b75"></script>
+<script src="app.js" defer></script>
 </body>
 </html>
