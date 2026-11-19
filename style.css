@@ -404,3 +404,61 @@ header:not(.site-header) .logo{
   transition:.2s;box-shadow:0 8px 20px -8px rgba(2,132,199,.8);
 }
 .btn-principal:hover{filter:brightness(1.12);transform:translateY(-1px)}
+
+
+
+
+/* ---------- MODO CLARO ---------- */
+body.light-theme {
+  --bg: #f8fafc;
+  --bg-soft: #f1f5f9;
+  --surface: #ffffff;
+  --surface-2: #e2e8f0;
+  --border: #cbd5e1;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #0284c7;
+  --accent-2: #0891b2;
+  --accent-strong: #0369a1;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(2, 132, 199, 0.08), transparent 60%),
+    radial-gradient(700px 400px at 0% 0%, rgba(8, 145, 178, 0.06), transparent 60%),
+    var(--bg);
+}
+
+body.light-theme header.site-header {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+body.light-theme .logo {
+  color: #0f172a;
+}
+
+body.light-theme .price {
+  color: #0f172a;
+}
+
+body.light-theme footer.site-footer {
+  background: #e2e8f0;
+}
+
+/* Botón de alternancia de tema */
+.theme-toggle {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: .4rem .65rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+}
