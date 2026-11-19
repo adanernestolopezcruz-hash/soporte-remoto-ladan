@@ -83,3 +83,27 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
     banner.hidden = true;
   });
 })();
+
+
+
+// --- Selector / Botón Modo Oscuro / Claro ---
+(function () {
+  const themeToggleBtn = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Aplicar tema guardado si existe
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    if (themeToggleBtn) themeToggleBtn.textContent = '☀️';
+  } else {
+    if (themeToggleBtn) themeToggleBtn.textContent = '🌙';
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light-theme');
+      themeToggleBtn.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  }
+})();
